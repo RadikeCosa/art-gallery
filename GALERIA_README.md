@@ -69,20 +69,6 @@ export const artworks: Artwork[] = [
 ];
 ```
 
-## 🔮 Próximas Funcionalidades
-
-Ideas para expandir la galería:
-
-- [ ] Página de galería con todas las obras
-- [ ] Sistema de "likes" funcional
-- [ ] Compartir en redes sociales
-- [ ] Categorías/etiquetas para las obras
-- [ ] Búsqueda de obras
-- [ ] Carrusel de imágenes
-- [ ] Comentarios de visitantes
-- [ ] Perfil de la artista
-- [ ] Subir obras desde un formulario
-
 ## 🛠️ Tecnologías
 
 - [Next.js 16](https://nextjs.org/) - Framework React
