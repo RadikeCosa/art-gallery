@@ -2,28 +2,30 @@ import { Artwork } from "@/types/artwork";
 
 export const artworks: Artwork[] = [
   {
-    id: "dragon-arcoiris",
-    title: "El Dragón Arcoíris",
-    imageUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBxUQYHNPlX1_zjlRiXRvHJ6xLx2_sspvJYG8Sxlqc2vUbLbHvd3gdZy7OTnfQc2b3vnZ4pas9rZaQmtTNVqDrGGZk5hCMbrtZjWW4DnieEbdVetHhUd5-91kt2aFa8eWRY_Bh-QZ_a9YUQPg8kbnGuyxuywb137w6lK-bTv7mbbf4E4cUvmtUWzwktEb0aiXzdDLB7NS9o4aTTrHodvVncIKU3P8VoU7wNynZPMT2KKdPugRKfPvBOe4DbBBsD1_E-uloQ6-kWGkmW",
-    imageAlt: "Colorful digital painting of a vibrant rainbow dragon in clouds",
-    createdDate: "15 de Octubre, 2023",
+    id: "mariposas-hermosas",
+    title: "Mariposas Hermosas",
+    imageUrl: "/artworks/mariposas-hermosas.webp",
+    imageAlt: "Imagen de Mariposas Hermosas",
+    createdDate: "22 de Julio, 2023",
     story:
-      "Este dragón vive en las nubes más altas y lanza chispas de colores mágicos en lugar de fuego. ¡Lo dibujé después de ver un arcoíris doble gigante en el parque con mi abuela! Sus escamas brillan cuando sale el sol.",
-    artist: "Camila",
+      "Estas mariposas (una mas pequeña sutilmente dentro de la mas grande) representan la evolución y el crecimiento. Es una de mis primeras obras digitales",
+    artist: "Camola",
     likes: 0,
+    dimensions: "1000x752",
+    aspectRatio: "4:3",
   },
   {
-    id: "gato-arcoiris",
-    title: "El Gato Arcoíris",
-    imageUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAJskYcQOpx_Hpm-IRghZUeaduzsxALfEllEshs2Pgh0MmpKyT2-A3QdBoVM0chEinmD5uQRtVgJHUB75rzLab2YBfZqwL78tjv3CU6fd9VfMqGrA30d8V7QXhcmfazb7X6sbb6atNQBH7gJ1lOLo-lzHACIcxWMVT1k_qw6ShWsRYoCzMnam8-t0gCWAF7y-8-8xNKg7RYkIGdN3obFzw2zQUeyougnN0zReU4CeV9SoIGoqCNsYj9U2vgfT9cGrVVaHuA64m25TrX",
-    imageAlt: "a cute colorful rainbow cat",
+    id: "multicolor",
+    title: "Multicolor",
+    imageUrl: "/artworks/multicolor.webp",
+    imageAlt: "a cute colorful kind of caleidoscope image",
     createdDate: "8 de Agosto, 2023",
     story:
-      "Mi gatito se convirtió en un gato mágico con todos los colores del arcoíris. Le encanta jugar con bolas de luz y ronronea melodías mágicas.",
-    artist: "Camila",
+      "Especie de caleidoscopio colorido con propiedades relajantes y rejuvenecedoras.",
+    artist: "Camola",
     likes: 0,
+    dimensions: "752x1000",
+    aspectRatio: "3:4",
   },
   {
     id: "castillo-nubes",

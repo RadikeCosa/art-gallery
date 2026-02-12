@@ -16,11 +16,11 @@ export default function ArtCard({
   return (
     <Link
       href={`/${id}`}
-      className="relative bg-(--color-background) rounded-xl overflow-hidden shadow-lg shadow-(--color-primary)/5 flex flex-col"
+      className="relative bg-(--color-background) rounded-xl overflow-hidden shadow-lg shadow-(--color-primary)/5 flex flex-col h-full"
       aria-label={imageAlt}
     >
       <div
-        className="w-full aspect-3/4 bg-contain bg-center bg-no-repeat"
+        className="w-full h-full bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('${imageUrl}')`,
         }}

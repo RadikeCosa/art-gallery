@@ -7,4 +7,6 @@ export interface Artwork {
   story: string;
   artist: string;
   likes?: number;
+  dimensions?: string;
+  aspectRatio?: string;
 }
