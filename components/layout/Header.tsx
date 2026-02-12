@@ -1,30 +1,81 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
+
+const navLinks = [
+  { href: "/", label: "Inicio" },
+  { href: "#series", label: "Series" },
+  { href: "#about", label: "Sobre Mi" },
+  { href: "#contact", label: "Contacto" },
+];
 
 export default function Header() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
-    <header className="sticky top-0 z-50 grid grid-cols-[auto_1fr_auto] items-center bg-background/80 backdrop-blur-md p-4 pb-2 px-12 gap-x-8">
-      <div className="flex size-12 shrink-0 items-center">
-        <Link href="/" className="group">
+    <header className="sticky top-0 z-50 border-b border-(--color-border) bg-(--color-background)/85 backdrop-blur-lg">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
+        {/* Logo */}
+        <Link href="/" className="group flex items-center gap-3">
           <div
-            className="bg-linear-to-tr from-(--color-primary) to-(--color-secondary) aspect-square rounded-full size-10 flex items-center justify-center text-(--color-white) font-bold transition-all duration-200 group-hover:scale-110 group-hover:from-(--color-secondary) group-hover:to-(--color-primary) group-hover:shadow-lg"
-            data-alt="colorful circular logo with letter C"
+            className="flex size-10 shrink-0 items-center justify-center rounded-full bg-(--color-primary) text-(--color-white) text-sm font-extrabold tracking-wide transition-transform duration-200 group-hover:scale-110"
+            aria-hidden="true"
           >
             C
           </div>
+          <span className="hidden text-lg font-bold tracking-tight text-(--color-foreground) sm:inline">
+            Camola
+          </span>
         </Link>
-      </div>
-      <h1 className="text-(--color-foreground) text-3xl leading-tight tracking-[-0.015em] font-(--font-body) text-center w-full">
-        Camola&apos;s Art Gallery
-      </h1>
-      {/* Links derecha */}
-      <nav className="flex justify-end items-center gap-4">
-        <Link
-          href="#about"
-          className="text-(--color-foreground) text-2xl font-medium transition-all duration-200 hover:scale-110 hover:text-(--color-secondary)"
+
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-1 md:flex" aria-label="Navegacion principal">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="rounded-lg px-4 py-2 text-sm font-semibold text-(--color-neutral-600) transition-colors duration-200 hover:bg-(--color-neutral-100) hover:text-(--color-primary)"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Mobile hamburger */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="flex size-10 items-center justify-center rounded-lg text-(--color-foreground) transition-colors hover:bg-(--color-neutral-100) md:hidden"
+          aria-label={mobileOpen ? "Cerrar menu" : "Abrir menu"}
+          aria-expanded={mobileOpen}
         >
-          About Me
-        </Link>
-      </nav>
+          <span className="material-symbols-outlined text-2xl">
+            {mobileOpen ? "close" : "menu"}
+          </span>
+        </button>
+      </div>
+
+      {/* Mobile nav overlay */}
+      {mobileOpen && (
+        <nav
+          className="border-t border-(--color-border) bg-(--color-background) px-4 pb-6 pt-2 md:hidden"
+          aria-label="Navegacion movil"
+        >
+          <ul className="flex flex-col gap-1">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-3 rounded-xl px-4 py-3 text-base font-semibold text-(--color-neutral-700) transition-colors duration-200 hover:bg-(--color-neutral-100) hover:text-(--color-primary)"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }

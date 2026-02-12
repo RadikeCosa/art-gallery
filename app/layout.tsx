@@ -1,17 +1,21 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-body",
+const _plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
 });
 
+export const viewport: Viewport = {
+  themeColor: "#8c2bee",
+  userScalable: true,
+};
+
 export const metadata: Metadata = {
-  title: "Galería de Arte | Camola",
+  title: "Galeria de Arte | Camola",
   description:
-    "Galería de arte online de Camola, donde exhibe su colección de arte digital y proximamente su arte en formato fisico digitalizado en NFT.",
+    "Galeria de arte online de Camola, donde exhibe su coleccion de arte digital y proximamente su arte en formato fisico digitalizado en NFT.",
   icons: {
     other: [
       {
@@ -28,8 +32,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`inline ${plusJakarta.variable}`}>
-      <body className="antialiased min-h-screen w-full flex flex-col bg-(--color-background-light) text-(--color-foreground) font-(--font-body)">
+    <html lang="es">
+      <body className="antialiased flex min-h-screen w-full flex-col bg-(--color-background) text-(--color-foreground) font-sans">
         {children}
       </body>
     </html>
