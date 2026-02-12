@@ -5,6 +5,7 @@ interface ArtCardProps {
   title: string;
   imageUrl: string;
   imageAlt: string;
+  aspectRatio?: string;
 }
 
 export default function ArtCard({
@@ -12,17 +13,25 @@ export default function ArtCard({
   title,
   imageUrl,
   imageAlt,
+  aspectRatio,
 }: ArtCardProps) {
+  const getAspectRatioClass = (ratio?: string): string => {
+    if (!ratio) return "masonry-item-1-1";
+    // Convertir "4/3" -> "masonry-item-4-3"
+    return `masonry-item-${ratio.replace("/", "-")}`;
+  };
+
   return (
     <Link
       href={`/${id}`}
-      className="relative bg-(--color-background) rounded-xl overflow-hidden shadow-lg shadow-(--color-primary)/5 flex flex-col h-full"
+      className={`masonry-item ${getAspectRatioClass(aspectRatio)} relative bg-(--color-background) rounded-xl overflow-hidden shadow-lg shadow-(--color-primary)/5 flex flex-col`}
       aria-label={imageAlt}
     >
       <div
-        className="w-full h-full bg-cover bg-center bg-no-repeat"
+        className="w-full h-full bg-contain bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('${imageUrl}')`,
+          aspectRatio: aspectRatio || "1/1",
         }}
       />
       <div className="p-3 bg-linear-to-t from-[rgba(0,0,0,0.8)] to-transparent absolute bottom-0 left-0 right-0">

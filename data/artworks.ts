@@ -12,7 +12,7 @@ export const artworks: Artwork[] = [
     artist: "Camola",
     likes: 0,
     dimensions: "1000x752",
-    aspectRatio: "4:3",
+    aspectRatio: "4/3",
   },
   {
     id: "multicolor",
@@ -25,7 +25,7 @@ export const artworks: Artwork[] = [
     artist: "Camola",
     likes: 0,
     dimensions: "752x1000",
-    aspectRatio: "3:4",
+    aspectRatio: "3/4",
   },
   {
     id: "gato-negro",
@@ -37,7 +37,7 @@ export const artworks: Artwork[] = [
     artist: "Camola",
     likes: 0,
     dimensions: "960x1280",
-    aspectRatio: "3:4",
+    aspectRatio: "3/4",
   },
   {
     id: "citoplasma",
@@ -50,7 +50,7 @@ export const artworks: Artwork[] = [
     artist: "Camola",
     likes: 0,
     dimensions: "1000x752",
-    aspectRatio: "4:3",
+    aspectRatio: "4/3",
   },
   {
     id: "planetarios",
@@ -63,7 +63,7 @@ export const artworks: Artwork[] = [
       "Saturno finalmente obtuvo sus clones para luchar en la batalla de los planetarios. No se sabe si ganaron o perdieron, pero se dice que el universo tembló ese día.",
     artist: "Camola",
     dimensions: "752x1000",
-    aspectRatio: "3:4",
+    aspectRatio: "3/4",
     likes: 0,
   },
   {
@@ -76,6 +76,8 @@ export const artworks: Artwork[] = [
       "Este es otro caso de un nombre no del todo logrado para la obra ya que el titulo actual no describe el sentido de la direccionalidad de los nervios, en otras palabras no tiene en cuenta el vector.",
     artist: "Camola",
     likes: 0,
+    dimensions: "1000x752",
+    aspectRatio: "4/3",
   },
   {
     id: "atardecer-en-el-mar",
@@ -87,5 +89,7 @@ export const artworks: Artwork[] = [
       "Obra del periodo de relajante tambien conocido como periodo MR (miorrelajante).",
     artist: "Camola",
     likes: 0,
+    dimensions: "1000x752",
+    aspectRatio: "4/3",
   },
 ];

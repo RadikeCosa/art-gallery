@@ -3,7 +3,7 @@ import ArtCard from "./ArtCard";
 
 export default function Gallery() {
   return (
-    <main className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 min-h-screen">
+    <main className="masonry-grid p-4 min-h-screen">
       {artworks.map((art) => (
         <ArtCard
           key={art.id}
@@ -11,6 +11,7 @@ export default function Gallery() {
           title={art.title}
           imageUrl={art.imageUrl}
           imageAlt={art.imageAlt}
+          aspectRatio={art.aspectRatio}
         />
       ))}
     </main>
