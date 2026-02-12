@@ -67,9 +67,9 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* Grid view */}
+      {/* Grid view (masonry) */}
       {view === "grid" && (
-        <div className="gallery-grid view-transition" role="tabpanel" aria-label="Vista de grilla">
+        <div className="masonry-grid view-transition" role="tabpanel" aria-label="Vista de grilla">
           {artworks.map((art, i) => (
             <ArtCard
               key={art.id}
@@ -87,24 +87,22 @@ export default function Gallery() {
 
       {/* Carousel view */}
       {view === "carousel" && (
-        <div className="view-transition relative" role="tabpanel" aria-label="Vista de carrusel">
-          {/* Carousel navigation */}
-          <div className="mb-4 flex items-center justify-end gap-2">
-            <button
-              onClick={() => scrollBy("left")}
-              className="flex size-10 items-center justify-center rounded-full border border-(--color-border) bg-(--color-card) text-(--color-neutral-600) transition-all duration-200 hover:border-(--color-primary) hover:text-(--color-primary) hover:shadow-md"
-              aria-label="Anterior"
-            >
-              <span className="material-symbols-outlined text-xl">chevron_left</span>
-            </button>
-            <button
-              onClick={() => scrollBy("right")}
-              className="flex size-10 items-center justify-center rounded-full border border-(--color-border) bg-(--color-card) text-(--color-neutral-600) transition-all duration-200 hover:border-(--color-primary) hover:text-(--color-primary) hover:shadow-md"
-              aria-label="Siguiente"
-            >
-              <span className="material-symbols-outlined text-xl">chevron_right</span>
-            </button>
-          </div>
+        <div className="view-transition relative md:px-8" role="tabpanel" aria-label="Vista de carrusel">
+          {/* Navigation buttons - vertically centered on the images */}
+          <button
+            onClick={() => scrollBy("left")}
+            className="absolute left-0 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-(--color-border) bg-(--color-card) text-(--color-neutral-600) shadow-lg transition-all duration-200 hover:border-(--color-primary) hover:text-(--color-primary) hover:shadow-xl md:flex size-11"
+            aria-label="Anterior"
+          >
+            <span className="material-symbols-outlined text-xl">chevron_left</span>
+          </button>
+          <button
+            onClick={() => scrollBy("right")}
+            className="absolute right-0 top-1/2 z-10 hidden translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-(--color-border) bg-(--color-card) text-(--color-neutral-600) shadow-lg transition-all duration-200 hover:border-(--color-primary) hover:text-(--color-primary) hover:shadow-xl md:flex size-11"
+            aria-label="Siguiente"
+          >
+            <span className="material-symbols-outlined text-xl">chevron_right</span>
+          </button>
 
           <div ref={trackRef} className="carousel-track">
             {artworks.map((art, i) => (
